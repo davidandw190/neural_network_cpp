@@ -4,13 +4,15 @@
 
 #pragma once
 
+#include "GlobalConstants.h"
+
 #ifndef NEURAL_NETWORK_CPP_NNDRAWER_H
 #define NEURAL_NETWORK_CPP_NNDRAWER_H
 
 
 
 
-void draw_neural_network(sf::RenderWindow& i_window, const std::vector<std::vector<float>>& i_neural_network);
+void draw_neural_network(sf::RenderWindow& i_window, const vector_2d& i_neural_network, const vector_3d& i_weights);
 
 
 #endif //NEURAL_NETWORK_CPP_NNDRAWER_H

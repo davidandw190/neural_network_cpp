@@ -19,7 +19,11 @@ int main() {
             "Neural networks",
             sf::Style::Close);
 
-    sf::Event event{};
+    vector_2d neural_network(2 + HIDDEN_NEURONS.size());
+
+    vector_3d weights(neural_network.size() - 1);
+
+    sf::Event event;
 
     sf::CircleShape neuron_shape(NEURON_SHAPE_RADIUS);
     neuron_shape.setFillColor(sf::Color::White);
@@ -28,12 +32,6 @@ int main() {
 
 
     window.setView(sf::View(sf::FloatRect(0, 0, 2 * SCREEN_WIDTH, SCREEN_HEIGHT)));
-
-    std::vector<std::vector<float>> neural_network = {
-            {0.1, 0.2, 0.3},
-            {0.4, 0.5, 0.6},
-            {0.7, 0.8, 0.9}
-    };
 
 
     while (window.isOpen()) {
