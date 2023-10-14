@@ -3,8 +3,8 @@
 //
 #pragma once
 
-#ifndef NEURAL_NETWORK_CPP_GLOBALCONSTANTS_H
-#define NEURAL_NETWORK_CPP_GLOBALCONSTANTS_H
+#ifndef NEURAL_NETWORK_CPP_GLOBALCONSTANTS_HPP
+#define NEURAL_NETWORK_CPP_GLOBALCONSTANTS_HPP
 
 #include <chrono>
 
@@ -23,4 +23,4 @@ typedef std::vector<float> vector_1d;
 typedef std::vector<std::vector<float>> vector_2d;
 typedef std::vector<std::vector<std::vector<float>>> vector_3d;
 
-#endif //NEURAL_NETWORK_CPP_GLOBALCONSTANTS_H
+#endif //NEURAL_NETWORK_CPP_GLOBALCONSTANTS_HPP

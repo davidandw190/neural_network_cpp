@@ -3,8 +3,8 @@
 #include <random>
 #include <SFML/Graphics.hpp>
 
-#include "Headers/GlobalConstants.h"
-#include "Headers/NNDrawer.h"
+#include "Headers/GlobalConstants.hpp"
+#include "Headers/NNDrawer.hpp"
 
 
 int main() {

@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "GlobalConstants.h"
+#include "GlobalConstants.hpp"
 
 #ifndef NEURAL_NETWORK_CPP_NNDRAWER_H
 #define NEURAL_NETWORK_CPP_NNDRAWER_H

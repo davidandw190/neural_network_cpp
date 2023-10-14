@@ -9,8 +9,8 @@
 #include <chrono>
 #include <valarray>
 
-#include "Headers/NNDrawer.h"
-#include "Headers/GlobalConstants.h"
+#include "Headers/NNDrawer.hpp"
+#include "Headers/GlobalConstants.hpp"
 
 void draw_neural_network(sf::RenderWindow& i_window, const vector_2d& i_neural_network, const vector_3d& i_weights) {
 

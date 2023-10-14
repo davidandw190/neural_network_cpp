@@ -7,8 +7,10 @@ find_package(SFML 2.5 COMPONENTS graphics REQUIRED)
 set(CMAKE_CXX_STANDARD 23)
 
 add_executable(neural_network_cpp main.cpp
-        Headers/GlobalConstants.h
+        Headers/GlobalConstants.hpp
         NNDrawer.cpp
-        Headers/NNDrawer.h)
+        Headers/NNDrawer.hpp
+        TextDrawer.cpp
+        Headers/TextDrawer.hpp)
 
 target_link_libraries(neural_network_cpp sfml-graphics)
