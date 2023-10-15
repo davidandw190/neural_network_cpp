@@ -19,6 +19,9 @@ constexpr std::chrono::microseconds FRAME_DURATION(16667);
 
 constexpr unsigned char NEURON_SHAPE_RADIUS = 32;
 
+//The size of the array is the total number of hidden layers. Each element is the number of neurons in each layer.
+constexpr std::array<unsigned, 2> HIDDEN_NEURONS = {3, 3};
+
 typedef std::vector<float> vector_1d;
 typedef std::vector<std::vector<float>> vector_2d;
 typedef std::vector<std::vector<std::vector<float>>> vector_3d;
