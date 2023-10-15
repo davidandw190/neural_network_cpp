@@ -13,6 +13,8 @@ add_executable(neural_network_cpp main.cpp
         TextDrawer.cpp
         Headers/TextDrawer.hpp
         MinElement.cpp
-        Headers/MinElement.hpp)
+        Headers/MinElement.hpp
+        MaxElement.cpp
+        Headers/MaxElement.hpp)
 
 target_link_libraries(neural_network_cpp sfml-graphics)
