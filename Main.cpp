@@ -22,7 +22,22 @@ int main() {
 
     sf::Event event;
 
+    sf::Image outputs_image;
+    outputs_image.create(OUTPUTS_WIDTH, OUTPUTS_HEIGHT);
+
     window.setView(sf::View(sf::FloatRect(0, 0, 2 * SCREEN_WIDTH, SCREEN_HEIGHT)));
+
+    sf::Sprite outputs_sprite;
+
+    sf::Texture font_texture;
+    font_texture.loadFromFile("Resources/Fonts/Font1.png");
+
+    sf::Texture outputs_texture;
+    outputs_texture.loadFromImage(outputs_image);
+
+    outputs_sprite.setPosition(SCREEN_WIDTH, 0);
+    outputs_sprite.setScale(SCREEN_WIDTH / OUTPUTS_WIDTH, SCREEN_HEIGHT / OUTPUTS_HEIGHT);
+    outputs_sprite.setTexture(outputs_texture);
 
     while (window.isOpen()) {
         sf::Event event;

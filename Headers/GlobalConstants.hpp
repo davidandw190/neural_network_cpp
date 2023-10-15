@@ -12,6 +12,9 @@ constexpr unsigned short SCREEN_HEIGHT = 512;
 constexpr unsigned short SCREEN_WIDTH = 512;
 constexpr unsigned char SCREEN_RESIZE = 1;
 
+constexpr unsigned short OUTPUTS_HEIGHT = 64;
+constexpr unsigned short OUTPUTS_WIDTH = 64;
+
 constexpr unsigned char DECIMAL_DIGITS = 2;
 constexpr unsigned char LINE_THICKNESS = 2;
 
