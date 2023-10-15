@@ -24,10 +24,10 @@ void draw_text(bool horizontal_center, bool vertical_center, short x, short y, c
             if (horizontal_center) {
                 char_x = static_cast<float>(x) - 0.5f * char_width * static_cast<float>(text.substr(0, text.find_first_of('\n')).size()); // Cast to float
             } else {
-                char_x = static_cast<float>(x); // Cast to float
+                char_x = static_cast<float>(x);
             }
 
-            char_y += static_cast<float>(char_height); // Cast to float
+            char_y += static_cast<float>(char_height);
             continue;
         }
 
