@@ -2,6 +2,7 @@
 #include <random>
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <filesystem>
 
 #include "Headers/GlobalConstants.hpp"
 #include "Headers/NNDrawer.hpp"
@@ -30,7 +31,15 @@ int main() {
     sf::Sprite outputs_sprite;
 
     sf::Texture font_texture;
-    font_texture.loadFromFile("Resources/Fonts/Font1.png");
+    std::filesystem::path font_path = std::filesystem::absolute("Resources/Fonts/Font1.png");
+
+    if (std::filesystem::exists(font_path)) {
+        if (!font_texture.loadFromFile(font_path.string())) {
+            std::cerr << "Failed to load font_texture from path: " << font_path << std::endl;
+        }
+    } else {
+        std::cerr << "Font file not found: " << font_path << std::endl;
+    }
 
     sf::Texture outputs_texture;
     outputs_texture.loadFromImage(outputs_image);

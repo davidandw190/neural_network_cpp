@@ -25,6 +25,10 @@ void draw_neural_network(sf::RenderWindow& window, const vector_2d& neural_netwo
 
     sf::VertexArray connection_shape(sf::Quads, 4);
 
+    if (get_min_element(neural_network) >= 0) {
+        min_neuron = 0;
+    }
+
     for (unsigned char i = 0; i < neural_network.size(); i++) {
 
         unsigned short neuron_x = SCREEN_WIDTH * (1 + i) / (1 + neural_network.size());
@@ -53,7 +57,42 @@ void draw_neural_network(sf::RenderWindow& window, const vector_2d& neural_netwo
                 float min_weight = -max_weight;
 
                 unsigned bias_neurons = 0;
+
+                if (i < neural_network.size() - 2) {
+                    bias_neurons = BIAS_NEURONS[1 + i];
+                }
+
+                for (unsigned k=bias_neurons; k < neural_network[1 + i].size(); k++) {
+                    if (0 <= weights[i][k - bias_neurons][j]) {
+                        unsigned char connection_opacity = std::round(255 * weights[i][k][j] / max_weight);
+
+                        connection_shape[0].color = sf::Color(0, 255, 0, connection_opacity);
+                        connection_shape[1].color = sf::Color(0, 255, 0, connection_opacity);
+                        connection_shape[2].color = sf::Color(0, 255, 0, connection_opacity);
+                        connection_shape[3].color = sf::Color(0, 255, 0, connection_opacity);
+                    } else  {
+                        unsigned char connection_opacity = std::round(255 * weights[i][k - bias_neurons][j] / min_weight);
+
+                        connection_shape[0].color = sf::Color(255, 0, 0, connection_opacity);
+                        connection_shape[1].color = sf::Color(255, 0, 0, connection_opacity);
+                        connection_shape[2].color = sf::Color(255, 0, 0, connection_opacity);
+                        connection_shape[3].color = sf::Color(255, 0, 0, connection_opacity);
+                    }
+
+                    unsigned short prev_neuron_x = SCREEN_WIDTH * (2 + i) / (1 + neural_network.size());
+                    unsigned short prev_neuron_y = SCREEN_HEIGHT * (1 + k) / (1 + neural_network[1 + i].size());
+
+                    // TODO: set connection positions
+
+                    window.draw(connection_shape);
+                }
+
+
             }
+
+
+
+
 
             window.draw(neuron_shape);
 
