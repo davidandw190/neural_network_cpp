@@ -15,6 +15,9 @@ add_executable(neural_network_cpp Main.cpp
         MinElement.cpp
         Headers/MinElement.hpp
         MaxElement.cpp
-        Headers/MaxElement.hpp)
+        Headers/MaxElement.hpp
+        ForwardPropagation.cpp
+        ActivationFunction.cpp
+        Headers/ActivationFunction.hpp)
 
 target_link_libraries(neural_network_cpp sfml-graphics)
